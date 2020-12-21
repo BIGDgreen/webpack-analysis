@@ -7,8 +7,7 @@ const pluginName = 'ConsoleLogOnBuildWebpackPlugin';
 // class ConsoleLogOnBuildWebpackPlugin {
 //   apply(compiler) {
 //     compiler.hooks.run.tap(pluginName, compilation => {
-//       console.log('执行plugin, webpack 构建过程开始！');
-//       console.log("========================")
+//       console.log('run hooks is called 执行plugin, webpack 构建过程开始！');
 //     });
 //   }
 // }
@@ -19,7 +18,7 @@ function ConsoleLogOnBuildWebpackPlugin(compiler) {
     console.log("environment 构建开始！")
   });
   compiler.hooks.run.tap(pluginName, compilation => {
-    console.log('执行plugin, webpack 构建过程开始！');
+    console.log('run hooks is called 执行plugin, webpack 构建过程开始！');
   });
 }
 

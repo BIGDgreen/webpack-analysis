@@ -2,12 +2,12 @@
 // bail：顺序调用
 // waterfall：上一个方法的返回结果作为输入参数
 const {
-	SyncHook, // 同步的串行，不关心监听函数的返回值
-	SyncBailHook, // 同步的串行，只要监听函数有一个函数的返回值不为 null，跳过所有的
-	SyncWaterfallHook,  // 同步的串行，流式串行，上一个监听函数的返回值可以传给下一个参数
+	SyncHook, // 同步串行，不关心监听函数的返回值
+	SyncBailHook, // 同步串行，只要监听函数有一个函数的返回值不为 null，跳过所有的
+	SyncWaterfallHook,  // 同步串行，流式串行，上一个监听函数的返回值可以传给下一个参数
 	SyncLoopHook,   // 同步循环，上一个监听函数返回true，反复执行
-	AsyncParallelHook,  // 异步
-	AsyncParallelBailHook,
+	AsyncParallelHook,  // 异步并行，不关心监听函数的返回值
+	AsyncParallelBailHook, // 异步串行，
 	AsyncSeriesHook,	// 异步按顺序执行
 	AsyncSeriesBailHook,
 	AsyncSeriesWaterfallHook
@@ -26,7 +26,7 @@ complier.hooks.tap("1", function(name) {
 });
 
 complier.hooks.tap("2", function(name, name2) {
-    console.log(name, name2, 2);
+	console.log(name, name2, 2);
 });
 
 complier.hooks.tap({

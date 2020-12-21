@@ -12,6 +12,6 @@
   \**********************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements:  */
-eval("console.log('demo webpack');\n\n\n//# sourceURL=webpack://demo/./src/index.js?");
+eval("\nconsole.log('demo webpack');\n\n\n//# sourceURL=webpack://demo/./src/index.js?");
 /******/ })()
 ;
